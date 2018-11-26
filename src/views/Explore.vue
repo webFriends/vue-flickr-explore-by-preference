@@ -189,7 +189,7 @@ export default {
     padding: 60px 0;
   }
   .mobile-only{
-    display: none;
+    display: none !important;
   }
   .explore__search-wall {
     position: fixed;
@@ -234,7 +234,7 @@ export default {
     height: 100%;
   }
   .desktop-only {
-    display: none;
+    display: none !important;
   }
   .explore__header {
     position: fixed;
