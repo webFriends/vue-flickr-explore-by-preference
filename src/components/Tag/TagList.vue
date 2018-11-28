@@ -64,6 +64,7 @@ export default {
     height: 100%;
     width: 100%;
     background-color: #fafafa;
+    -webkit-overflow-scrolling: touch;
   }
   .tag-list__tag {
     width: 100%;
