@@ -8,10 +8,10 @@
       <img class="tab__img" :src="tagsTabImg">
       <p :class="['tab__title', {'tab__title--color-grey':!isTagsTabSelected}]">Tags</p>
     </div>
-    <div class="footer__tab tab">
+    <!-- <div class="footer__tab tab">
       <img class="tab__img" src="public/mobile/member-icon.png">
       <p class="tab__title">Login</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
