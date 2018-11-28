@@ -56,9 +56,6 @@ export default {
   display: flex;
   align-items: center;
 }
-.control__text-clear-all{
-  margin-right: 8px;
-}
 .text{
   font-family: Helvetica;
   font-size: 14px;
@@ -69,11 +66,15 @@ export default {
   letter-spacing: normal;
   color: #262626;
 }
+.control__text-clear-all{
+  margin-right: 16px;
+  color:dimgrey;
+}
 .control__triangle--right {
   border-style: solid;
   border-width: 5px 0 5px 8.7px;
   border-color: transparent transparent transparent black;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 .control__triangle--bottom{
   border-width: 8.7px 5px 0 5px;
