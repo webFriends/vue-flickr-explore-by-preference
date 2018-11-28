@@ -180,10 +180,6 @@ export default {
 </script>
 
 <style scoped>
-.explore__interestingness-wall {
-  background-color: #fff;
-}
-
 @media screen and (min-width: 426px) {
   .explore {
     padding: 60px 0;
@@ -200,6 +196,7 @@ export default {
   .explore__interestingness-wall {
     max-width: 614px;
     margin: 0 auto;
+    background-color: #fafafa;
   }
   .explore__preloader {
    height: 1200px;
@@ -258,6 +255,7 @@ export default {
     width: 100%;
     padding-top: 48px;
     padding-bottom: 46px;
+    background-color: #fff;
   }
   .explore__preloader {
     position: fixed;

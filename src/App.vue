@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 #app {
-  height: 100%;
+  min-height: 100vh;
   background-color:#FAFAFA;
 }
 </style>
