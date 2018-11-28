@@ -1,5 +1,5 @@
 <template>
-  <div class="explore">
+  <div class="explore" meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <ExploreHeader class="explore__header mobile-only" @headerFocused="headerFocused"/>
     <ExplorePreloader class="explore__preloader" v-show="showPreloader" :loadingMessage="fetchedStatus" />
     <ExploreSelectedTags
@@ -239,12 +239,12 @@ export default {
     left: 0;
     width:100%;
     height: 48px;
-    z-index: 3;
+    z-index: 4;
     border-bottom: 1px solid #d8d8d8;
   }
   .explore__footer{
     border-top: 1px solid #d8d8d8;
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -253,9 +253,16 @@ export default {
   }
   .explore__interestingness-wall {
     width: 100%;
+    height: 100%;
     padding-top: 48px;
     padding-bottom: 46px;
     background-color: #fff;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .explore__preloader {
     position: fixed;
@@ -269,7 +276,7 @@ export default {
     left: 0;
     width: 100%;
     height: 35px;
-    z-index: 2;
+    z-index: 3;
   }
   .explore__footer-tags-tab {
     width: 100%;
@@ -280,7 +287,7 @@ export default {
     position: fixed;
     padding-bottom: 46px;
     padding-top: 48px;
-    z-index: 1;
+    z-index: 2;
   }
   .explore__interestingness-wall--translate {
     transform: translateY(35px)
