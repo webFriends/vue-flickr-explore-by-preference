@@ -3,7 +3,7 @@
     <TagSearch class="tags-search" @updateSearch="updateSearch"/>
     <TagSelectedList class="tags-selected-list" :selectedTags="selectedTags" @sendRemovedTag="deleteSelectedTag"/>
     <TagList :tags="showTags" class="tags-selection" @chooseTag="chooseTag"/>
-    <a class="external-link" target="_blank" href="https://gitlab.com/web-friends/vue-flickr-explore-by-preference"><p class="link-text"> Gitlab Project </p></a>
+    <a class="external-link" target="_blank" href="https://github.com/webFriends/vue-flickr-explore-by-preference"><p class="link-text"> GitHub Project </p></a>
     <a class="external-link" target="_blank" href="https://www.flickr.com/explore"><p class="link-text"> Official Flickr Explore </p></a>
   </div>
 </template>

@@ -6,17 +6,17 @@
       class="photo-info__description"
       @sendClickedTag="sendClickedTag"
     />
-    <PhotoInfoFollow class="photo-info__fav-sign"/>
+    <!-- <PhotoInfoFollow class="photo-info__fav-sign"/> -->
   </div>
 </template>
 
 <script>
 import PhotoInfoDescription from './PhotoInfoDescription.vue'
-import PhotoInfoFollow from './PhotoInfoFollow.vue'
+// import PhotoInfoFollow from './PhotoInfoFollow.vue'
 export default {
   components: {
-    PhotoInfoDescription,
-    PhotoInfoFollow
+    PhotoInfoDescription
+    // PhotoInfoFollow
   },
   props: {
     photoTags: {
@@ -57,12 +57,12 @@ export default {
   width:calc(100% - 46px);
 }
 
-.photo-info__fav-sign {
+/* .photo-info__fav-sign {
   width: 46px;
   height: 100%;
   padding-right: 16px;
   padding-top: 16px;
   margin: 0 auto;
   text-align: right;
-}
+} */
 </style>
