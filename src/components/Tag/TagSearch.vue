@@ -37,12 +37,13 @@ export default {
 }
 
 .tag-search__text {
-  height: 18px;
+  height: 20px;
   width: 241px;
   margin: 5px 10px 5px 0px;
   border: none;
   font-family: Helvetica-Bold, sans-serif;
-  color: #999999
+  color: #999999;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 425px) {
