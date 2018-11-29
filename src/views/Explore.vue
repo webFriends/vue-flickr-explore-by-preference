@@ -3,7 +3,7 @@
     <ExploreHeader class="explore__header mobile-only" @headerFocused="headerFocused"/>
     <ExplorePreloader class="explore__preloader" v-show="showPreloader" :loadingMessage="fetchedStatus" />
     <ExploreSelectedTags
-      :class="['explore__selected-tags', {'explore__selected-tags--more-height ': isTagsListShown}, 'mobile-only']"
+      :class="['explore__selected-tags', {'explore__selected-tags--more-height ': isTagsListShown}, 'mobile-only','scroll-target']"
       v-show="showSelectedTags"
       :selectedTags="selectedTags"
       @deleteAllSelectedTags="deleteAllSelectedTags"
@@ -12,7 +12,7 @@
     />
     <ExplorePhotos
       id="top"
-      :class=" [{'explore__interestingness-wall--translate': showSelectedTags }, 'explore__interestingness-wall']"
+      :class=" [{'explore__interestingness-wall--translate': showSelectedTags }, 'explore__interestingness-wall', 'scroll-target']"
       :photos="photos"
       @sendClickedTag="chooseTag"
     />
@@ -136,7 +136,6 @@ export default {
       })
     },
     footerTabSelected (tab) {
-      console.log(tab)
       this.isTagsTabSelected = (tab === 'tags')
       this.isHeaderFocused = false
     },
@@ -196,7 +195,7 @@ export default {
   .explore__interestingness-wall {
     max-width: 614px;
     margin: 0 auto;
-    background-color: #fafafa;
+    background-color: #FAFAFA;
   }
   .explore__preloader {
    height: 1200px;
@@ -239,12 +238,12 @@ export default {
     left: 0;
     width:100%;
     height: 48px;
-    z-index: 4;
+    z-index: 3;
     border-bottom: 1px solid #d8d8d8;
   }
   .explore__footer{
     border-top: 1px solid #d8d8d8;
-    z-index: 4;
+    z-index: 3;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -253,16 +252,9 @@ export default {
   }
   .explore__interestingness-wall {
     width: 100%;
-    height: 100%;
     padding-top: 48px;
     padding-bottom: 46px;
     background-color: #fff;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    position: fixed;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
   }
   .explore__preloader {
     position: fixed;
@@ -276,18 +268,18 @@ export default {
     left: 0;
     width: 100%;
     height: 35px;
-    z-index: 3;
+    z-index: 2;
   }
   .explore__footer-tags-tab {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
     top: 0;
     left: 0;
     position: fixed;
     padding-bottom: 46px;
     padding-top: 48px;
-    z-index: 2;
+    z-index: 1;
   }
   .explore__interestingness-wall--translate {
     transform: translateY(35px)
