@@ -47,16 +47,16 @@ export default {
 }
 .photo-tags__notation {
   font-family: Helvetica, sans-serif;
-  padding: 2px 4px;
-  margin: 1px;
+  margin-right: 6px;
+  margin-bottom: 12px;
   font-weight: bold;
 }
 .photo-tags__tag{
   font-family: Helvetica, sans-serif;
   cursor: pointer;
-  padding: 2px 4px;
   border-radius: 2px;
-  margin: 1px;
+  margin-right: 6px;
+  margin-bottom: 12px;
   font-weight: bold;
   word-break:break-all;
   word-wrap:break-word;
@@ -73,6 +73,7 @@ export default {
   color: #262626;
   word-break:break-all;
   word-wrap:break-word;
+  margin-bottom: 16px;
 }
 
 </style>

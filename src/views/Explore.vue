@@ -93,7 +93,7 @@ export default {
 
   methods: {
     fetchDataFromFlickr () {
-      this.isFetchingData = true;
+      this.isFetchingData = true
       axios
         .get(`/api/interestingness/getList?page=${this.page}&per_page=20`)
         .then(response => {
@@ -110,12 +110,12 @@ export default {
             this.photosData.push(...newPhotosDataResponse)
             this.page += 1
           }
-          this.isFetchingData =  false
+          this.isFetchingData = false
         })
         .catch(err => {
           console.log(err)
           this.fetchedStatus = 'error'
-          this.isFetchingData =  false
+          this.isFetchingData = false
         })
     },
     getSplitString (text) {
