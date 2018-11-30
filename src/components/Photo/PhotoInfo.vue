@@ -54,7 +54,9 @@ export default {
 }
 
 .photo-info__description {
-  width:calc(100% - 46px);
+  /* width:calc(100% - 46px); */
+  /*for .photo-info__fav-sign */
+  width:100%;
 }
 
 /* .photo-info__fav-sign {

@@ -95,7 +95,7 @@ export default {
     fetchDataFromFlickr () {
       this.isFetchingData = true
       axios
-        .get(`/api/interestingness/getList?page=${this.page}&per_page=20`)
+        .get(`/api/interestingness/getList?page=${this.page}&per_page=500`)
         .then(response => {
           if (_.isEmpty(response.data.photos.photo)) {
             this.fetchedStatus = 'empty'
