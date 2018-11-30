@@ -1,6 +1,6 @@
 <template>
   <div class="tag-search">
-    <p class="tag-search__img">🔍</p>
+    <div class="tag-search__img">🔍</div>
     <input class="tag-search__text" placeholder="Search Tag" v-model="filter" @keyup="updateSearch(filter)">
   </div>
 </template>
@@ -28,22 +28,25 @@ export default {
   border: 1px solid #d8d8d8;
   background-color: #ffffff;
   display: flex;
+  align-items: center;
 }
 
 .tag-search__img {
-  width: 16px;
-  height: 16px;
-  margin: 0 10px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .tag-search__text {
   height: 20px;
   width: 241px;
-  margin: 5px 10px 5px 0px;
   border: none;
   font-family: Helvetica-Bold, sans-serif;
   color: #999999;
   font-size: 16px;
+  margin-left: 6px;
 }
 
 @media screen and (max-width: 425px) {
