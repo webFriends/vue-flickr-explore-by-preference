@@ -51,7 +51,7 @@ import ExploreFooter from 'src/components/mobile/ExploreFooter.vue'
 export default {
   watch: {
     isScrollReachBottom () {
-      if (this.isScrollReachBottom && this.isPageOneFetched) {
+      if (this.isScrollReachBottom && this.isPageOneFetched && !this.isFetchingData) {
         this.fetchDataFromFlickr()
       }
     }
@@ -66,6 +66,7 @@ export default {
       isTagsTabSelected: false,
       isHeaderFocused: false,
       isTagsListShown: false,
+      isFetchingData: false,
       page: 1
     }
   },
@@ -92,6 +93,7 @@ export default {
 
   methods: {
     fetchDataFromFlickr () {
+      this.isFetchingData = true;
       axios
         .get(`/api/interestingness/getList?page=${this.page}&per_page=20`)
         .then(response => {
@@ -108,10 +110,12 @@ export default {
             this.photosData.push(...newPhotosDataResponse)
             this.page += 1
           }
+          this.isFetchingData =  false
         })
         .catch(err => {
           console.log(err)
           this.fetchedStatus = 'error'
+          this.isFetchingData =  false
         })
     },
     getSplitString (text) {
