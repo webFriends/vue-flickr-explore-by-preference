@@ -11,6 +11,7 @@
       @isTagsListShown="tagsListButtom"
     />
     <ExplorePhotos
+      v-show="!showPreloader"
       id="top"
       :class=" [{'explore__interestingness-wall--translate': showSelectedTags }, 'explore__interestingness-wall', 'scroll-target']"
       :photos="photos"
