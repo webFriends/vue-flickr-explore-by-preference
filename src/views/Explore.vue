@@ -54,7 +54,6 @@ export default {
     isScrollReachBottom () {
       if (this.isScrollReachBottom && this.isPageOneFetched && !this.isFetchingData) {
         this.fetchDataFromFlickr()
-        console.log('test deploy')
       }
     }
   },
