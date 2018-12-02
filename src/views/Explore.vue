@@ -1,6 +1,5 @@
 <template>
   <div class="explore">
-    Testing now.sh deployment
     <ExploreHeader class="explore__header mobile-only" @headerFocused="headerFocused"/>
     <ExplorePreloader class="explore__preloader" v-show="showPreloader" :loadingMessage="fetchedStatus" />
     <ExploreSelectedTags
