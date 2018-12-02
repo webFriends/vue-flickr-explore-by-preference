@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "alias": "vue-flickr-explore-by-preference",
+  "env": {
+    "FLICKR_APP_API_KEY": "@flickr_app_api_key",
+    "FLICKR_APP_SECRET": "@flickr_app_secret"
+  }
+}
