@@ -7,7 +7,7 @@ let FLICKR_APP_API_KEY
 if (process.env.NODE_ENV === 'production') {
   FLICKR_APP_API_KEY = process.env['FLICKR_APP_API_KEY']
 } else {
-  FLICKR_APP_API_KEY = require('../../config')
+  FLICKR_APP_API_KEY = require('../../config')['FLICKR_APP_API_KEY']
 }
 
 router.get('/getList', (req, res) => {
