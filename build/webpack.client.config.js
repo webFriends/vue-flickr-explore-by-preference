@@ -41,7 +41,7 @@ const config = merge(base, {
   ]
 })
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'production-local') {
   config.plugins.push(
     // auto generate service worker
     new SWPrecachePlugin({

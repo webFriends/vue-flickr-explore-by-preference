@@ -8,7 +8,7 @@ const microcache = require('route-cache')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'production-local'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
 const serverInfo =
   `express/${require('express/package.json').version} ` +
