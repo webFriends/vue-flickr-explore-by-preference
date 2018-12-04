@@ -1,6 +1,5 @@
 <template>
   <div class="explore">
-    hello
     <ExploreHeader class="explore__header mobile-only" @headerFocused="headerFocused"/>
     <ExplorePreloader class="explore__preloader" v-show="showPreloader" :loadingMessage="fetchedStatus" />
     <ExploreSelectedTags
@@ -190,7 +189,7 @@ export default {
     padding: 60px 0;
   }
   .mobile-only{
-    display: none !important;
+    display: none;
   }
   .explore__search-wall {
     position: fixed;
@@ -204,7 +203,7 @@ export default {
     background-color: #FAFAFA;
   }
   .explore__preloader {
-   height: 1200px;
+    height: 100vh;
     top: -20px;
     position: relative;
     margin: 0 auto;
@@ -236,7 +235,7 @@ export default {
     height: 100%;
   }
   .desktop-only {
-    display: none !important;
+    display: none;
   }
   .explore__header {
     position: fixed;
