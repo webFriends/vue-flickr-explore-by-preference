@@ -1,6 +1,8 @@
 <template>
-  <div class="header">
-    <TagSearch class="tags-search" @focus.native.capture="headerFocused"/>
+  <div>
+    <div class="header">
+      <TagSearch class="tags-search" @focus.native.capture="headerFocused"/>
+    </div>
   </div>
 </template>
 

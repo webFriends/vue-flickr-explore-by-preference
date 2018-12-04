@@ -1,17 +1,19 @@
 <template>
-  <div class="footer">
-    <div class="footer__tab tab" @click="selectTab('photos')">
-      <img class="tab__img" :src="photosTabImg">
-      <p :class="['tab__title', {'tab__title--color-grey':isTagsTabSelected}]">Photos</p>
-    </div>
-    <div class="footer__tab tab" @click="selectTab('tags')">
-      <img class="tab__img" :src="tagsTabImg">
-      <p :class="['tab__title', {'tab__title--color-grey':!isTagsTabSelected}]">Tags</p>
-    </div>
+  <div>
+    <div class="footer">
+      <div class="footer__tab tab" @click="selectTab('photos')">
+        <img class="tab__img" :src="photosTabImg">
+        <p :class="['tab__title', {'tab__title--color-grey':isTagsTabSelected}]">Photos</p>
+      </div>
+      <div class="footer__tab tab" @click="selectTab('tags')">
+        <img class="tab__img" :src="tagsTabImg">
+        <p :class="['tab__title', {'tab__title--color-grey':!isTagsTabSelected}]">Tags</p>
+      </div>
     <!-- <div class="footer__tab tab">
       <img class="tab__img" src="public/mobile/member-icon.png">
       <p class="tab__title">Login</p>
     </div> -->
+    </div>
   </div>
 </template>
 

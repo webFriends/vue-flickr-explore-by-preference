@@ -32,7 +32,7 @@ export default {
   computed: {
     getProfileImg () {
       if (this.iconfarm !== 0) {
-        return `http://farm${this.iconfarm}.staticflickr.com/${this.iconserver}/buddyicons/${this.nsid}.jpg`
+        return `https://farm${this.iconfarm}.staticflickr.com/${this.iconserver}/buddyicons/${this.nsid}.jpg`
       } else {
         return 'https://www.flickr.com/images/buddyicon.gif'
       }
