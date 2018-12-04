@@ -256,6 +256,7 @@ export default {
     height: 46px;
   }
   .explore__interestingness-wall {
+    min-height: 100vh;
     width: 100%;
     padding-top: 48px;
     padding-bottom: 46px;
