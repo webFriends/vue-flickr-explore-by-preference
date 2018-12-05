@@ -48,6 +48,7 @@ import ExplorePhotos from 'src/components/ExplorePhotos.vue'
 import ExploreTags from 'src/components/ExploreTags.vue'
 import ExploreTagsMobile from 'src/components/mobile/ExploreTagsMobile.vue'
 import ExploreFooter from 'src/components/mobile/ExploreFooter.vue'
+import dayjs from 'dayjs'
 
 export default {
   watch: {
@@ -68,7 +69,8 @@ export default {
       isHeaderFocused: false,
       isTagsListShown: false,
       isFetchingData: false,
-      page: 1
+      page: 1,
+      date: dayjs().subtract(1, 'day')
     }
   },
 
@@ -96,7 +98,7 @@ export default {
     fetchDataFromFlickr () {
       this.isFetchingData = true
       axios
-        .get(`/api/interestingness/getList?page=${this.page}&per_page=500`)
+        .get(`/api/interestingness/getList?page=${this.page}&per_page=500&date=${this.date.subtract(this.page-1, 'day').format('YYYY-MM-DD')}`)
         .then(response => {
           if (_.isEmpty(response.data.photos.photo)) {
             this.fetchedStatus = 'empty'
