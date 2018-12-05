@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const axios = require('axios')
 const { get } = require('lodash')
+const dayjs = require('dayjs')
 
 let FLICKR_APP_API_KEY
 if (process.env.NODE_ENV === 'production') {
@@ -15,7 +16,8 @@ router.get('/getList', (req, res) => {
   const extras = 'owner_name, icon_server, tags, url_z'
   const page = get(req.query, 'page', 1)
   const perPage = get(req.query, 'per_page', 25)
-  const url = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=${FLICKR_APP_API_KEY}&extras=${extras}&page=${page}&per_page=${perPage}&format=json&nojsoncallback=1`
+  const date = get(req.query, 'date', dayjs().subtract(1, 'day').format('YYYY-MM-DD'))
+  const url = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=${FLICKR_APP_API_KEY}&date=${date}&extras=${extras}&page=${page}&per_page=${perPage}&format=json&nojsoncallback=1`
 
   axios.get(url)
     .then(resData => res.status(200).send(resData.data))
