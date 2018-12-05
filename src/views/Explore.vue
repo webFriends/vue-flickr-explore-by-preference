@@ -69,6 +69,7 @@ export default {
       isHeaderFocused: false,
       isTagsListShown: false,
       isFetchingData: false,
+      isFirstTryFetching: true,
       page: 1,
       date: dayjs().subtract(1, 'day')
     }
@@ -116,9 +117,15 @@ export default {
           this.isFetchingData = false
         })
         .catch(err => {
-          console.log(err)
-          this.fetchedStatus = 'error'
-          this.isFetchingData = false
+          if (this.isFirstTryFetching) {
+            this.date = this.date.subtract(1, 'day')
+            this.isFirstTryFetching = false
+            this.fetchDataFromFlickr()
+          } else {
+            console.log(err)
+            this.fetchedStatus = 'error'
+            this.isFetchingData = false
+          }
         })
     },
     getSplitString (text) {
