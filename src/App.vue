@@ -6,6 +6,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted () {
+    /* eslint-disable no-undef */
+    require('autotrack')
+    ga('require', 'cleanUrlTracker')
+    ga('require', 'eventTracker')
+    ga('require', 'pageVisibilityTracker')
+    ga('send', 'pageview')
+  }
+}
+</script>
+
 <style>
 * {
     padding: 0;
