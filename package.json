@@ -63,7 +63,6 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "sw-precache-webpack-plugin": "^0.11.4",
-    "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^0.6.2",
     "vue-loader": "^15.0.0-beta.1",
     "vue-template-compiler": "^2.5.16",
