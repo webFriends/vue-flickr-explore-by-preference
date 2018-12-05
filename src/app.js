@@ -8,7 +8,7 @@ import VueLazyload from 'vue-lazyload'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueLazyload, {
-  preLoad: 0.5,
+  preLoad: 1.2,
   error: './public/error.png',
   loading: './public/loading.gif',
   attempt: 2,
