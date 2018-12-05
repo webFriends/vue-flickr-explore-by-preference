@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <img class="profile__image" @click="linktoPhotoStream" :src="getProfileImg" >
+    <img class="profile__image" @click="linktoPhotoStream" v-lazy="getProfileImg" >
     <p class="profile__name" @click="linktoPhotoStream">{{ ownerName }}</p>
   </div>
 </template>
