@@ -78,7 +78,7 @@ export default {
 
 .profile__name {
   font-family: Helvetica-Bold, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 
