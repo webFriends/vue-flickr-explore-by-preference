@@ -10,11 +10,13 @@
 export default {
   mounted () {
     /* eslint-disable no-undef */
-    require('autotrack')
-    ga('require', 'cleanUrlTracker')
-    ga('require', 'eventTracker')
-    ga('require', 'pageVisibilityTracker')
-    ga('send', 'pageview')
+    if (location && location.hostname !== 'localhost') {
+      require('autotrack')
+      ga('require', 'cleanUrlTracker')
+      ga('require', 'eventTracker')
+      ga('require', 'pageVisibilityTracker')
+      ga('send', 'pageview')
+    }
   }
 }
 </script>
