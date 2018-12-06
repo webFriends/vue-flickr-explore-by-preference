@@ -7,6 +7,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -39,6 +40,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .selected-tags {
   margin: auto 0;
@@ -74,7 +76,7 @@ export default {
   border-style: solid;
   border-width: 5px 0 5px 8.7px;
   border-color: transparent transparent transparent black;
-  margin-right: 12px;
+  margin-right: 14px;
 }
 .control__triangle--bottom{
   border-width: 8.7px 5px 0 5px;

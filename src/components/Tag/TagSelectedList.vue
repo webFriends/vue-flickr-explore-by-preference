@@ -31,6 +31,7 @@ export default {
     display: flex;
     width: 293px;
     flex-wrap: wrap;
+    word-break: break-all;
 }
 @media screen and (max-width: 425px) {
   .selected-list {

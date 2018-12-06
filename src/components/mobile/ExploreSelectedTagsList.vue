@@ -35,16 +35,19 @@ export default {
   flex-direction: column;
 }
 .selected-list__tag {
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   font-family: Helvetica;
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
   word-wrap: break-word;
+  display: flex;
+  align-items: center;
 }
 .cross-sign {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
 }
 
 </style>
