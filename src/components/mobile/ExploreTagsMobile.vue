@@ -19,6 +19,10 @@ export default {
       default: function () {
         return []
       }
+    },
+    mobileSeach: {
+      type: String,
+      default: ''
     }
   },
   methods: {
@@ -31,7 +35,7 @@ export default {
   },
   computed: {
     showTags () {
-      return this.tags
+      return this.tags.filter(tag => tag.includes(this.mobileSeach.toLowerCase()))
     }
   }
 }

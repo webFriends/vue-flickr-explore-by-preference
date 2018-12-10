@@ -1,10 +1,14 @@
 <template>
   <div>
-    <TagSearch class="tags-search" @updateSearch="updateSearch"/>
-    <TagSelectedList class="tags-selected-list" :selectedTags="selectedTags" @sendRemovedTag="deleteSelectedTag"/>
-    <TagList :tags="showTags" class="tags-selection" @chooseTag="chooseTag"/>
-    <a class="external-link" target="_blank" href="https://github.com/webFriends/vue-flickr-explore-by-preference"><p class="link-text"> GitHub Project </p></a>
-    <a class="external-link" target="_blank" href="https://www.flickr.com/explore"><p class="link-text"> Official Flickr Explore </p></a>
+    <TagSearch class="tags-search" @updateSearch="updateSearch" />
+    <TagSelectedList class="tags-selected-list" :selectedTags="selectedTags" @sendRemovedTag="deleteSelectedTag" />
+    <TagList :tags="showTags" class="tags-selection" @chooseTag="chooseTag" />
+    <a class="external-link" target="_blank" href="https://github.com/webFriends/vue-flickr-explore-by-preference">
+      <p class="link-text"> GitHub Project </p>
+    </a>
+    <a class="external-link" target="_blank" href="https://www.flickr.com/explore">
+      <p class="link-text"> Official Flickr Explore </p>
+    </a>
   </div>
 </template>
 
@@ -55,33 +59,36 @@ export default {
 </script>
 
 <style scopped>
-.tags-search {
-  border-bottom: 1px solid #d8d8d8;
-}
-.link-text {
-  margin-bottom: 12px;
-  font-family: Helvetica, sans-serif;
-  font-size: 14px;
-  width: 293px;
-  height: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  color: #262626;
-}
-.external-link:link,
-.external-link:visited{
-  text-decoration:none;
-}
-.tags-selection {
-  border-top: 1px solid #d8d8d8;
-  border-bottom: 1px solid #d8d8d8;
-  margin: 12px 0;
-}
-.tags-selected-list {
-  margin-top:12px;
-}
+  .tags-search {
+    border-bottom: 1px solid #d8d8d8;
+  }
 
+  .link-text {
+    margin-bottom: 12px;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    width: 293px;
+    height: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #262626;
+  }
+
+  .external-link:link,
+  .external-link:visited {
+    text-decoration: none;
+  }
+
+  .tags-selection {
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    margin: 12px 0;
+  }
+
+  .tags-selected-list {
+    margin-top: 12px;
+  }
 </style>

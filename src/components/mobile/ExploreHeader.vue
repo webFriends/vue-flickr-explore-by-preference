@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <TagSearch class="tags-search" @focus.native.capture="headerFocused"/>
+      <TagSearch class="tags-search" @updateSearch="updateSearch" @focus.native.capture="headerFocused" />
     </div>
   </div>
 </template>
@@ -15,19 +15,21 @@ export default {
   methods: {
     headerFocused () {
       this.$emit('headerFocused', true)
+    },
+    updateSearch (value) {
+      this.$emit('mobileUpdateSearch', value)
     }
   }
 }
 </script>
 
 <style scoped>
-.header {
-  width: 100%;
-  height:100%;
-  background-color: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-}
-
+  .header {
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
