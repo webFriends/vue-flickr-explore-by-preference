@@ -1,6 +1,6 @@
 <template>
   <div class="explore">
-    <ExploreHeader class="explore__header mobile-only" @headerFocused="headerFocused"/>
+    <ExploreHeader class="explore__header mobile-only" @headerFocused="headerFocused" @mobileUpdateSearch="mobileUpdateSearch"/>
     <ExplorePreloader class="explore__preloader" v-show="showPreloader" :loadingMessage="fetchedStatus" />
     <ExploreSelectedTags
       :class="['explore__selected-tags', {'explore__selected-tags--more-height ': isTagsListShown}, 'mobile-only','scroll-target']"
@@ -29,6 +29,7 @@
       :class="['explore__footer-tags-tab',{'explore__interestingness-wall--translate': showSelectedTags},'mobile-only']"
       v-show="isTagsTabSelected" :tags="getTagsInfo"
       :selectedTags="selectedTags"
+      :mobileSeach = "mobileSeach"
       @chooseTag="chooseTag"
       @removeTag="removeTag"
     />
@@ -69,9 +70,9 @@ export default {
       isHeaderFocused: false,
       isTagsListShown: false,
       isFetchingData: false,
-      isFirstTryFetching: true,
       page: 1,
-      date: dayjs().subtract(1, 'day')
+      date: dayjs().subtract(1, 'day'),
+      mobileSeach: ''
     }
   },
 
@@ -101,7 +102,11 @@ export default {
       axios
         .get(`/api/interestingness/getList?page=${this.page}&per_page=500&date=${this.date.subtract(this.page - 1, 'day').format('YYYY-MM-DD')}`)
         .then(response => {
-          if (_.isEmpty(response.data.photos.photo)) {
+          if (response.data.message === 'No interesting photos are available for that date') {
+            console.log('No interesting photos are available for that date, let\'s go fetch previous day\'s data')
+            this.date = this.date.subtract(1, 'day')
+            this.fetchDataFromFlickr()
+          } else if (_.isEmpty(response.data.photos.photo)) {
             this.fetchedStatus = 'empty'
           } else {
             let newPhotosDataResponse = response.data.photos.photo
@@ -117,15 +122,9 @@ export default {
           this.isFetchingData = false
         })
         .catch(err => {
-          if (this.isFirstTryFetching) {
-            this.date = this.date.subtract(1, 'day')
-            this.isFirstTryFetching = false
-            this.fetchDataFromFlickr()
-          } else {
-            console.log(err)
-            this.fetchedStatus = 'error'
-            this.isFetchingData = false
-          }
+          console.log(err)
+          this.fetchedStatus = 'error'
+          this.isFetchingData = false
         })
     },
     getSplitString (text) {
@@ -163,6 +162,9 @@ export default {
     },
     tagsListButtom (value) {
       this.isTagsListShown = value
+    },
+    mobileUpdateSearch (value) {
+      this.mobileSeach = value
     }
   },
 
@@ -262,13 +264,13 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 46px;
+    height: 48px;
   }
   .explore__interestingness-wall {
     min-height: 100vh;
     width: 100%;
     padding-top: 48px;
-    padding-bottom: 46px;
+    padding-bottom: 48px;
     background-color: #fff;
   }
   .explore__preloader {
@@ -292,7 +294,7 @@ export default {
     top: 0;
     left: 0;
     position: fixed;
-    padding-bottom: 46px;
+    padding-bottom: 48px;
     padding-top: 48px;
     z-index: 1;
   }
@@ -300,7 +302,7 @@ export default {
     transform: translateY(35px)
   }
   .explore__selected-tags--more-height {
-    height: calc(100vh - 94px);
+    height: calc(100vh - 96px);
   }
 }
 
