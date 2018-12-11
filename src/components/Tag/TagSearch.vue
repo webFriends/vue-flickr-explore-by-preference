@@ -1,7 +1,7 @@
 <template>
   <div class="tag-search">
     <div class="tag-search__img">🔍</div>
-    <input class="tag-search__text" placeholder="Search Tag" v-model="filter" @keyup="updateSearch(filter)">
+    <input class="tag-search__text" placeholder="Search Tag" v-model="filter" @input="updateSearch(filter)">
   </div>
 </template>
 
