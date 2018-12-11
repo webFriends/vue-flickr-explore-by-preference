@@ -54,7 +54,7 @@ import dayjs from 'dayjs'
 export default {
   watch: {
     isScrollReachBottom () {
-      if (this.isScrollReachBottom && this.isPageOneFetched && !this.isFetchingData) {
+      if (this.isScrollReachBottom && this.isPageOneFetched && !this.isFetchingData && _.isEmpty(this.selectedTags)) {
         this.fetchDataFromFlickr()
       }
     }
@@ -264,13 +264,13 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 48px;
+    height: 50px;
   }
   .explore__interestingness-wall {
     min-height: 100vh;
     width: 100%;
     padding-top: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 50px;
     background-color: #fff;
   }
   .explore__preloader {
@@ -294,7 +294,7 @@ export default {
     top: 0;
     left: 0;
     position: fixed;
-    padding-bottom: 48px;
+    padding-bottom: 50px;
     padding-top: 48px;
     z-index: 1;
   }
@@ -302,7 +302,7 @@ export default {
     transform: translateY(35px)
   }
   .explore__selected-tags--more-height {
-    height: calc(100vh - 96px);
+    height: calc(100vh - 98px);
   }
 }
 
