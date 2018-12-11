@@ -80,6 +80,8 @@ export default {
   font-family: Helvetica-Bold, sans-serif;
   font-size: 16px;
   cursor: pointer;
+  word-break: break-all;
+  /* word-wrap: break-word; */
 }
 
 .profile__name:hover {
