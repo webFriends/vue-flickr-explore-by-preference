@@ -100,7 +100,7 @@ function render (req, res) {
   }
 
   const context = {
-    title: 'vue-flickr-explore-by-preference', // default title
+    title: 'Flickr Explore by tags', // default title
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {
