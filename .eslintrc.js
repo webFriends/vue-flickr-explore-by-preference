@@ -21,6 +21,9 @@ module.exports = {
       'svg': 'always',
       'math': 'always'
     }],
-    'vue/attribute-hyphenation': [2, "never", { 'ignore': ['custom-prop'] }]
+    'vue/attribute-hyphenation': [2, "never", { 'ignore': ['custom-prop'] }],
+    'vue/attribute-hyphenation': [ 'never', {
+      'ignore': [ 'ga-on', 'ga-event-category', 'ga-event-action' ]
+    }]
   }
 }

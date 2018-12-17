@@ -2,7 +2,17 @@
   <div class="description">
     <p class="description__photo-title"> {{ photoTitle }}</p>
     <div class="description__photo-tags photo-tags">
-      <span class="photo-tags__tag" v-for="(tag, i) in photoTags" :key="i" @click="sendClickedTag(tag) ">#{{ tag }}</span>
+      <span
+        ga-on="click"
+        ga-event-category="tag"
+        ga-event-action="select photoInfoDescription's tag"
+        class="photo-tags__tag"
+        v-for="(tag, i) in photoTags"
+        :key="i"
+        @click="sendClickedTag(tag)"
+        v-text="`#${tag}`"
+      >
+      </span>
     </div>
   </div>
 </template>

@@ -195,7 +195,7 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 769px) {
   .explore {
     padding: 60px 0;
   }
@@ -239,7 +239,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .explore {
     position: flex;
     width: 100%;

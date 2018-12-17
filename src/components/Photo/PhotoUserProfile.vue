@@ -57,7 +57,7 @@ export default {
   border-left: solid 1px rgba(0, 0, 0, 0.15);
   border-right: solid 1px rgba(0, 0, 0, 0.15);
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .profile{
     border: none;
   }

@@ -1,7 +1,14 @@
 <template>
   <div>
     <div class="header">
-      <TagSearch class="tags-search" @updateSearch="updateSearch" @focus.native.capture="headerFocused" />
+      <TagSearch
+        ga-on="click"
+        ga-event-category="input"
+        ga-event-action="mobile-key in tag search"
+        class="tags-search"
+        @updateSearch="updateSearch"
+        @focus.native.capture="headerFocused"
+      />
     </div>
   </div>
 </template>

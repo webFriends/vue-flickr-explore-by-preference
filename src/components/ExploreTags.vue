@@ -1,6 +1,11 @@
 <template>
   <div>
-    <TagSearch class="tags-search" @updateSearch="updateSearch" />
+    <TagSearch
+      ga-on="click"
+      ga-event-category="input"
+      ga-event-action="desktop-key in tag search"
+      class="tags-search" @updateSearch="updateSearch"
+    />
     <TagSelectedList class="tags-selected-list" :selectedTags="selectedTags" @sendRemovedTag="deleteSelectedTag" />
     <TagList :tags="showTags" class="tags-selection" @chooseTag="chooseTag" />
     <a class="external-link" target="_blank" href="https://github.com/webFriends/vue-flickr-explore-by-preference">
