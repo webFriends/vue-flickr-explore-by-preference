@@ -1,6 +1,13 @@
 <template>
   <div class="selected-list">
-    <div v-for="(tag,i) in selectedTags" class="selected-list__tag" :key="i" @click="sendRemovedTag(tag)">
+    <div
+      ga-on="click"
+      ga-event-category="tag"
+      ga-event-action="mobile-unselect tag"
+      v-for="(tag,i) in selectedTags"
+      class="selected-list__tag"
+      :key="i" @click="sendRemovedTag(tag)"
+    >
       <img class="cross-sign" src="~src/img/cancel.png">
       {{ tag }}
     </div>

@@ -1,11 +1,23 @@
 <template>
   <div>
     <div class="footer">
-      <div class="footer__tab tab" @click="selectTab('photos')">
+      <div
+        ga-on="click"
+        ga-event-category="button"
+        ga-event-action="mobile-select tag tab"
+        class="footer__tab tab"
+        @click="selectTab('photos')"
+      >
         <img class="tab__img" :src="photosTabImg">
         <p :class="['tab__title', {'tab__title--color-grey':isTagsTabSelected}]">Photos</p>
       </div>
-      <div class="footer__tab tab" @click="selectTab('tags')">
+      <div
+        ga-on="click"
+        ga-event-category="button"
+        ga-event-action="mobile-select photo tab"
+        class="footer__tab tab"
+        @click="selectTab('tags')"
+      >
         <img class="tab__img" :src="tagsTabImg">
         <p :class="['tab__title', {'tab__title--color-grey':!isTagsTabSelected}]">Tags</p>
       </div>

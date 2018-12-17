@@ -1,6 +1,14 @@
 <template>
   <div class="tag-list">
-    <div v-for="(tag,i) in tags" :key="i" class="tag-list__tag tag" @click="clickTag(tag)">
+    <div
+      ga-on="click"
+      ga-event-category="taglist"
+      ga-event-action="select/unselect tag-list's tag"
+      v-for="(tag,i) in tags"
+      :key="i"
+      class="tag-list__tag tag"
+      @click="clickTag(tag)"
+    >
       <img v-show="isTagSelected(tag)" class="tag__icon-checked mobile-only" src="public/check.png">
       <span v-show="!isTagSelected(tag)"># </span>
       <span class="tag__tag-name">{{ tag }}</span>
@@ -59,7 +67,7 @@ export default {
 .tag-list__tag:hover {
   cursor: pointer;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px){
   .tag-list{
     height: 100%;
     width: 100%;

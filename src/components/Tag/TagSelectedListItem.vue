@@ -1,5 +1,13 @@
 <template>
-  <div class="tag" @click="sendRemovedTag(tag)" @mouseover="showCrossSign" @mouseout="hideCrossSign">
+  <div
+    ga-on="click"
+    ga-event-category="selected taglist"
+    ga-event-action="desktop-unselect tag"
+    class="tag"
+    @click="sendRemovedTag(tag)"
+    @mouseover="showCrossSign"
+    @mouseout="hideCrossSign"
+  >
     <span v-show="!isMouseOver">#</span>
     <img v-show="isMouseOver" class="cross-sign" src="../../img/cancel.png">
     <span class="tag-name">{{ tag }}</span>

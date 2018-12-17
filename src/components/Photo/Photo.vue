@@ -7,7 +7,14 @@
       :iconfarm="photo.iconfarm"
       :iconserver="photo.iconserver"
     />
-    <img class="photo__middle-photo" v-lazy="photo.url_z" @click="linktoPhoto">
+    <img
+      ga-on="click"
+      ga-event-category="photo"
+      ga-event-action="link back to flickr"
+      class="photo__middle-photo"
+      v-lazy="photo.url_z"
+      @click="linktoPhoto"
+    >
     <PhotoInfo class="photo__below-explanation" :photoTags="photo.tagsArray" :photoTitle="photo.title" @sendClickedTag="sendClickedTag"/>
   </div>
 </template>
